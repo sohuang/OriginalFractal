@@ -3,14 +3,14 @@ public float h;
 
 public void setup() {
 	size(640, 480);
-	background(255);
+	background(200);
 	colorMode(HSB);
 	noFill();
 	t = 0;
 }
 
 public void draw() {
-	background(255);
+	background(200);
 	h = map(noise(t), 0, 1, -100, 255);
 	drawCircle(width / 2, height / 2, 500);
 	t += 0.005;
