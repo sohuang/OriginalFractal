@@ -11,7 +11,7 @@ public void setup() {
 
 public void draw() {
 	background(255);
-	h = map(noise(t), 0, 1, 0, 255);
+	h = map(noise(t), 0, 1, -100, 255);
 	drawCircle(width / 2, height / 2, 500);
 	t += 0.005;
 }
