@@ -5,6 +5,7 @@ public void setup() {
 	size(640, 480);
 	background(200);
 	colorMode(HSB);
+	rectMode(CENTER);
 	noFill();
 	t = 0;
 }
@@ -17,8 +18,11 @@ public void draw() {
 }
 
 public void drawCircle(int x, int y, int r) {
-	stroke(h, map(noise(x, t), 0, 1, 0, 255), 255);
+	color col = color(h, map(noise(x, t), 0, 1, 0, 255), 255);
+	stroke(col);
 	ellipse(x, y, r, r);
+	fill(h, map(noise(x, t), 0, 1, 0, 255), 255, 1);
+	rect(x, y, r * noise(x, t) * 2, r * noise(y, t) * 2);
 	int r2 = r / 2;
 	if (r2 >= 10) {
 		drawCircle(x - r2, y, r2);
